@@ -39,4 +39,14 @@ public class UserController {
         userRepository.deleteById(id);
         return "Book deleted successfully";
     }
+
+    @GetMapping("/findUsersByName/{name}")
+    public List<User> getUsersByName(@PathVariable String name){
+        return userRepository.findByFirstName(name);
+    }
+
+    @GetMapping("/findUserByCity/{city}")
+    public List<User> getUsersByCity(@PathVariable String city){
+        return userRepository.findByCity(city);
+    }
 }

@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
@@ -19,5 +21,10 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
+
+    //one to many
+    private List<Product> products;
+    //one to one
+    private Address address;
 
 }
